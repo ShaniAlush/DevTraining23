@@ -21,10 +21,13 @@
 
 .column {
   display: flex;
+  flex-direction: column;
 }
 
 .row {
-  display: block;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
 }
 
 .box {

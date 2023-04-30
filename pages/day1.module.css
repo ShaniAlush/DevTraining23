@@ -17,18 +17,23 @@
   background-color: lightgrey;
   margin-bottom: 20px;
   padding: 10px;
+  /* max-height: 100vh; */
 }
 
 .column {
   display: flex;
   flex-direction: column;
   align-items: center;
+  flex-wrap: wrap;
+  max-height: 100vh;
 }
 
 .row {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
+  align-items: center;
+
 }
 
 .box {
@@ -41,4 +46,8 @@
   height: 150px;
   text-align: center;
   line-height: 130px;
+}
+
+@media (min-width: 768px) {
+
 }

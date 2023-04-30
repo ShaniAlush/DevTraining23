@@ -5,18 +5,18 @@
 
 .header {
   background-color: lightblue;
-  padding: 10px;
+  padding: 1.2rem;
   font-size: 2rem;
 }
 
 .main {
-  padding: 10px;
+  padding: 1.2rem;
 }
 
 .section {
   background-color: lightgrey;
-  margin-bottom: 20px;
-  padding: 10px;
+  margin-bottom: 2.4rem;
+  padding: 1.2rem;
   /* max-height: 100vh; */
 }
 
@@ -39,8 +39,8 @@
 .box {
   background-color: tomato;
   color: white;
-  padding: 10px;
-  margin: 10px;
+  padding: 1.2rem;
+  margin: 1.2rem;
   font-size: 1.5rem;
   width: 150px;
   height: 150px;
@@ -48,6 +48,26 @@
   line-height: 130px;
 }
 
-@media (min-width: 768px) {
-
+@media (max-width: 230px) {
+  .box {
+   width: 100px;
+   height: 100px;
+   display: flex;
+   align-self: center;
+   justify-content: center;
+   line-height: 0;
+   align-items: center;
+  }
 }
+
+/* @media (min-width: 576px) {
+  .box {
+   width: 200px;
+   height: 200px;
+   display: flex;
+   align-self: center;
+   justify-content: center;
+   line-height: 0;
+   align-items: center;
+  }
+} */

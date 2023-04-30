@@ -33,6 +33,7 @@
   flex-direction: row;
   flex-wrap: wrap;
   align-items: center;
+  align-self: center;
 
 }
 
@@ -46,9 +47,16 @@
   height: 150px;
   text-align: center;
   line-height: 130px;
+  transition: all 0.3s ease-in-out 0.3s;
 }
 
-@media (max-width: 230px) {
+.box:hover {
+  background-color: rgb(73, 211, 211);
+  color: #000;
+  cursor: pointer;
+}
+
+/* @media (max-width: 230px) {
   .box {
    width: 100px;
    height: 100px;
@@ -57,6 +65,20 @@
    justify-content: center;
    line-height: 0;
    align-items: center;
+  }
+} */
+
+
+@media (max-width: 576px) {
+  .box {
+   width: 100px;
+   height: 100px;
+   display: flex;
+   align-self: center;
+   justify-content: center;
+   line-height: 0;
+   align-items: center;
+   background-color: RED;;
   }
 }
 

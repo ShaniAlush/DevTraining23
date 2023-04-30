@@ -1,0 +1,15 @@
+.container {
+    display: flex;
+    flex-direction: column;
+}
+.navBar {
+    background-color: blue;
+    height: 20px;
+    width: 100vw;
+}
+
+@media (min-width: 576px) {
+    .navBar {
+    height: 30px;
+    }
+}

@@ -5,8 +5,13 @@
 
 .header {
   background-color: lightblue;
+<<<<<<< HEAD
   padding: 1.2rem;
   font-size: 2rem;
+=======
+  padding: 10px;
+  font-size: 1.5rem;
+>>>>>>> 30898c924a39b8521be8222cad79134a455a3f6e
 }
 
 .main {
@@ -40,9 +45,15 @@
 .box {
   background-color: tomato;
   color: white;
+<<<<<<< HEAD
   padding: 1.2rem;
   margin: 1.2rem;
   font-size: 1.5rem;
+=======
+  padding: 10px;
+  margin: 10px;
+  font-size: 1.2rem;
+>>>>>>> 30898c924a39b8521be8222cad79134a455a3f6e
   width: 150px;
   height: 150px;
   text-align: center;

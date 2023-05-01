@@ -17,6 +17,8 @@
 .listItem {
   font-size: 1.5rem;
   margin-bottom: 0.5rem;
+  display: flex;
+  flex-direction: row;
 }
 
 .addButton {
@@ -65,4 +67,12 @@
   border-radius: 5px;
   cursor: pointer;
   margin-left: 10px;
+}
+
+.liContainer {
+  display: flex;
+
+}
+.completed {
+  text-decoration: line-through !important;
 }

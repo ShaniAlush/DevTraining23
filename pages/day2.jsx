@@ -1,11 +1,9 @@
 import React, { useState } from 'react';
 // eslint-disable-next-line import/no-extraneous-dependencies
-import classnames from 'classnames';
+import cx from 'classnames';
 import Popup from '../components/Popup';
 import styles from './day2.module.css';
 import useTasks from '../hooks/useTaskHook';
-
-const cx = classnames.bind(styles);
 
 function TaskList() {
   const [tasks, addTask, removeTask, toggleCompleteTask] = useTasks();
@@ -66,11 +64,13 @@ function TaskList() {
           onClose={closePopup}
         />
       )}
+      {(tasks)
+      && (
       <ul className={styles.list}>
-        {tasks.map((task) => (
-          <li key={task.id} className={styles.listItem}>
+        {tasks?.map((task) => (
+          <li key={task?.id} className={styles.listItem}>
             <div className={cx(styles.liContainer, { completed: task.isCompleted })}>
-              {task.title}
+              {task?.title}
             </div>
             <input type="checkbox" value={task.isCompleted} onChange={() => onToggleComplete(task.id)} />
             <button type="button" className={styles.removeButton} onClick={() => onRemoveTask(task.id)}>
@@ -80,6 +80,7 @@ function TaskList() {
           </li>
         ))}
       </ul>
+      ) }
       <input
         type="text"
         className={styles.inputText}

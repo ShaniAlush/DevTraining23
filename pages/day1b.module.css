@@ -4,12 +4,12 @@
 }
 .navBar {
     background-color: blue;
-    height: 20px;
+    height: 40px;
     width: 100vw;
 }
 
 @media (min-width: 576px) {
     .navBar {
-    height: 30px;
+    height: 60px;
     }
 }

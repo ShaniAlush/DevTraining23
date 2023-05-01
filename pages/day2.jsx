@@ -1,13 +1,12 @@
 import React, { useState } from 'react';
 import Popup from '../components/Popup';
 import styles from './day2.module.css';
+import useTasks from '../hooks/useTaskHook';
 
 function TaskList() {
-  const [tasks, setTasks] = useState([
-    { id: 1, title: 'Learn React' },
-    { id: 2, title: 'Learn Next.js' },
-  ]);
+  const [tasks, addTask, removeTask] = useTasks();
   const [showPopup, setShowPopup] = useState(false);
+  const [newTask, setNewTask] = useState('');
 
   const openPopup = () => {
     setShowPopup(true);
@@ -17,8 +16,21 @@ function TaskList() {
     setShowPopup(false);
   };
 
-  const addTask = () => {
-    setTasks([...tasks, { id: tasks.length + 1, title: `Task ${tasks.length + 1}` }]);
+  function clearNewTask() {
+    setNewTask('');
+  }
+
+  const onAddTask = () => {
+    addTask(newTask);
+    clearNewTask();
+  };
+
+  const onRemoveTask = (taskId) => {
+    removeTask(taskId);
+  };
+
+  const handleChange = (event) => {
+    setNewTask(event?.target?.value);
   };
 
   const instructionsText = `
@@ -48,10 +60,22 @@ function TaskList() {
       )}
       <ul className={styles.list}>
         {tasks.map((task) => (
-          <li key={task.id} className={styles.listItem}>{task.title}</li>
+          <li key={task.id} className={styles.listItem}>
+            {task.title}
+            <button type="button" className={styles.removeButton} onClick={() => onRemoveTask(task.id)}>
+              Remove
+            </button>
+
+          </li>
         ))}
       </ul>
-      <button type="button" className={styles.addButton} onClick={addTask}>Add Task</button>
+      <input
+        type="text"
+        className={styles.inputText}
+        placeholder="Write new task"
+        onChange={handleChange}
+      />
+      <button type="button" className={styles.addButton} onClick={onAddTask}>Add Task</button>
     </div>
   );
 }

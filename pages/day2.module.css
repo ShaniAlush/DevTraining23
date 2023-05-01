@@ -50,3 +50,19 @@
   background-color: #0056b3;
   border-color: #0056b3;
 }
+
+.inputText {
+  height: 25px;
+  margin-right: 10px;
+}
+
+.removeButton {
+  font-size: 0.75rem;
+  padding: 0.25rem 0.25rem;
+  background-color: rgb(250, 52, 52);
+  color: #ffffff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-left: 10px;
+}

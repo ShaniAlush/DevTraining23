@@ -4,7 +4,7 @@ import styles from './day2.module.css';
 import useTasks from '../hooks/useTaskHook';
 
 function TaskList() {
-  const [tasks, addTask, removeTask] = useTasks();
+  const [tasks, addTask, removeTask, toggleCompleteTask] = useTasks();
   const [showPopup, setShowPopup] = useState(false);
   const [newTask, setNewTask] = useState('');
 
@@ -32,6 +32,10 @@ function TaskList() {
   const handleChange = (event) => {
     setNewTask(event?.target?.value);
   };
+
+  function onToggleComplete(taskID) {
+    toggleCompleteTask(taskID);
+  }
 
   const instructionsText = `
   1. Add an input field for adding new tasks.
@@ -62,6 +66,7 @@ function TaskList() {
         {tasks.map((task) => (
           <li key={task.id} className={styles.listItem}>
             {task.title}
+            <input type="checkbox" value={task.isCompleted} onChange={() => onToggleComplete(task.id)} />
             <button type="button" className={styles.removeButton} onClick={() => onRemoveTask(task.id)}>
               Remove
             </button>
